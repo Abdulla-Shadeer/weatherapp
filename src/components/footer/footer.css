@@ -4,3 +4,11 @@
     padding: 15px;
     text-align: center;
 }
+.footer p{
+    font-size: 18px;
+}
+.footer .credit{
+    font-size: smaller;
+    color:skyblue;
+    line-height:1.8;
+}

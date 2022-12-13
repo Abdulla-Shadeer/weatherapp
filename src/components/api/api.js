@@ -49,6 +49,7 @@ export default function useFetch(id) {
             //checking the cache data expired or not
             if ((now - fetchedTime) > cacheExpiry) {
                 //if expired
+                localStorage.removeItem(id.toString())
                 console.log("cache expired...")
                 fetchWeather()
             } else {

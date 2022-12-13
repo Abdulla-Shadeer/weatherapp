@@ -12,14 +12,20 @@ export default function useFetch(id) {
     useEffect(() => {
 
         setLoading(true)
-
+        
+        // fetch from api
         const fetchWeather = async () => {
             await axios.get(url)
                 .then((response) => {
                     setData(response.data)
                     setTime(response.data.list[0].dt)
-                    localStorage.setItem(response.data.list[0].id.toString(), JSON.stringify(response.data))
-                    console.log("fetched from api")
+
+                    //setting fetched time in the cache data in order to check expiry
+                    let fetchedTime = new Date().getTime()
+                    let dataToInsert = { ...response.data, 'fetchedTime': fetchedTime }
+
+                    localStorage.setItem(id.toString(), JSON.stringify(dataToInsert))
+                    console.log("fetched from api...")
                 })
                 .catch((err) => {
                     setError(err)
@@ -29,14 +35,31 @@ export default function useFetch(id) {
                 })
         }
 
+
+
+        // ==================== checking cache data, expiry ===============================
+
         const cachData = localStorage.getItem(id.toString())
+        const now = new Date().getTime()
+        const cacheExpiry = 1000 * 60 * 5 //in milli seconds
 
         if (cachData) {
-            setData(JSON.parse(cachData))
-            setTime(JSON.parse(cachData).list[0].dt)
-            setLoading(false)
-            console.log("fetched from cach")
+            const fetchedTime = JSON.parse(cachData).fetchedTime
+
+            //checking the cache data expired or not
+            if ((now - fetchedTime) > cacheExpiry) {
+                //if expired
+                console.log("cache expired...")
+                fetchWeather()
+            } else {
+                //if not expired
+                setData(JSON.parse(cachData))
+                setTime(JSON.parse(cachData).list[0].dt)
+                setLoading(false)
+                console.log("fetched from cach...")
+            }
         } else {
+            // if no cache data
             fetchWeather()
         }
 

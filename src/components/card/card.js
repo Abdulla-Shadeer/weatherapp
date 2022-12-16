@@ -1,5 +1,6 @@
 import { useState } from "react";
 import useFetch from "../api/api.js"
+import Loader from "../loader/loader.js";
 
 
 export default function Card(params) {
@@ -38,9 +39,7 @@ export default function Card(params) {
 
     if (loading) {
         return (
-            <div>
-                <h1>Loading...</h1>
-            </div>
+            <Loader/>
         )
     } else if (error) {
         console.log("error : ", error)

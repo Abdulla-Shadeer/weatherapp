@@ -1,0 +1,15 @@
+.options{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+.options label{
+    margin: 0 10px;
+}
+.options select{
+    padding: 5px 20px;
+}

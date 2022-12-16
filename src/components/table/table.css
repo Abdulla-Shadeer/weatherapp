@@ -1,0 +1,24 @@
+.tables-container{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+.tables-container table{
+    width: 100%;
+}
+.tables-container th{
+    background-color: white;
+    color: black;
+}
+.tables-container table{
+    margin: 10px auto;
+}
+
+@media screen and (max-width:768px){
+    .tables-container{
+        width: 100%;
+    }
+}

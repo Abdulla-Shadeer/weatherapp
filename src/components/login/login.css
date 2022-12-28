@@ -1,0 +1,33 @@
+.login{
+    background-color: white;
+    text-align: center;
+    color: black;
+    padding: 100px;
+    padding-top: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50% );
+    border: 1px solid gray;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+}
+.login button{
+    background-color: royalblue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.login button:hover{
+    background-color: blue;
+}
+
+@media screen and (max-width:768px){
+    .login{
+        padding: 10px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        width: 95%;
+    }
+}

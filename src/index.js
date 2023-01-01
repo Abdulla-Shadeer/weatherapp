@@ -8,16 +8,16 @@ import { Auth0Provider } from '@auth0/auth0-react';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Auth0Provider
-  clientId="THR5zMgKbWvqjY9ilfEV0UpOlMvujylu"
-  domain="dev-eld7e3jlxjo7mftb.us.auth0.com"
-  redirectUri="http://localhost:3000"
+    clientId={process.env.REACT_APP_AUTH0_CLIENT_ID}
+    domain={process.env.REACT_APP_AUTH0_DOMAIN}
+    redirectUri="http://localhost:3000"
+    audience='https://weather.app'
+    scope='view_mode:card view_mode:table view_mode:both read:current_user read:users'
   >
-  <App />
+    <App />
   </Auth0Provider>
-    
+
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+
 reportWebVitals();

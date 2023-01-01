@@ -12,7 +12,7 @@ export default function useFetch(id) {
     useEffect(() => {
 
         setLoading(true)
-        
+
         // fetch from api
         const fetchWeather = async () => {
             await axios.get(url)

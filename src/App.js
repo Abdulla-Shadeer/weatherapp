@@ -7,21 +7,23 @@ import Loader from './components/loader/loader.js';
 import './App.css';
 
 function App() {
-  const {isAuthenticated,error,isLoading} = useAuth0()
+  const { isAuthenticated, error, isLoading } = useAuth0()
 
-  if (isLoading){
-    return(
-    <Loader/>
-    )
-  }else if(error){
-    console.log(error)
-  }else if(isAuthenticated){
+  if (isLoading) {
     return (
-      <Home/>
+      <Loader />
     )
-  }else{
-    return(
-      <Login/>
+  } else if (error) {
+    console.log(error)
+  } else if (isAuthenticated) {
+    return (
+      <Home
+      />
+    )
+
+  } else {
+    return (
+      <Login />
     )
   }
 

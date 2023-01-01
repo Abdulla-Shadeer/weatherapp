@@ -1,5 +1,5 @@
 import { useState } from "react";
-import useFetch from "../api/api.js"
+import useFetch from "../../controllers/api/api.js"
 import Loader from "../loader/loader.js";
 
 

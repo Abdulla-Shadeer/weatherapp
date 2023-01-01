@@ -1,4 +1,4 @@
-import useFetch from "../api/api.js"
+import useFetch from "../../controllers/api/api.js"
 
 export default function TableRow(props) {
 

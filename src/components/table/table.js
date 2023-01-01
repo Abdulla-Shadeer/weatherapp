@@ -1,5 +1,5 @@
 import "./table.css"
-import useFetch from "../api/api";
+import useFetch from "../../controllers/api/api";
 import cities from "../../cities.json"
 import TableRow from "./tableRow";
 import Loader from "../loader/loader";

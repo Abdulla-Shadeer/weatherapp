@@ -4,8 +4,6 @@ import "./header.css";
 export default function Header() {
     const { user, logout } = useAuth0()
 
-    console.log(user)
-
     return (
         <>
             <div className="user"> <p> <img src={user.picture} alt="profile" /> Hello, {user.name}</p>

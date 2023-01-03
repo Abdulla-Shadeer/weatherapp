@@ -4,6 +4,8 @@ import "./header.css";
 export default function Header() {
     const { user, logout } = useAuth0()
 
+    console.log(user)
+
     return (
         <>
             <div className="user"> <p> <img src={user.picture} alt="profile" /> Hello, {user.name}</p>
@@ -21,7 +23,7 @@ export default function Header() {
                     <h2>Weather App</h2>
                 </div>
 
-                {user.role && user.role[0] === "admin" ?
+                {user.role === "admin" ?
                     <div className="add-city">
                         <input type="text" placeholder="enter city" />
                         <button> Add city </button>

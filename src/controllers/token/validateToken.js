@@ -26,7 +26,7 @@ export default function useToken() {
                 localStorage.setItem("access_token", token)
 
                 //setting permissions
-                decodedToken.permissions.map((item) => {
+                decodedToken&& decodedToken.permissions.map((item) => {
                     if (item === both) {
                         setPermission("both")
                     } else if (item === table) {

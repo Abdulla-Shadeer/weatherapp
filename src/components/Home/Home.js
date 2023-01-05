@@ -14,7 +14,7 @@ export default function Home() {
 
   useEffect(() => {
     if (!loading) {
-    // assigning user permission for view mode 
+      // assigning user permission for view mode
       if (permission === "Card") {
         setOption("Card");
         document.getElementById("options").disabled = true;
@@ -48,14 +48,11 @@ export default function Home() {
         </select>
       </div>
 
-    {/* checking view mode permission for the user */}
+      {/* checking view mode permission for the user */}
       {option === "Card" ? (
         <div className="card-container">
           {cities.map((item) => {
-            return <Card 
-            key={item.CityCode} 
-            id={item.CityCode} 
-            />;
+            return <Card key={item.CityCode} id={item.CityCode} />;
           })}
         </div>
       ) : (

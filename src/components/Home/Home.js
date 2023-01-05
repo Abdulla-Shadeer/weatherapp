@@ -1,10 +1,10 @@
 import Header from "../Header/Header.js";
 import Card from "../Card/Card.js";
-import cities from "../../cities.json";
-import "./../Card/card.css";
 import Footer from "../Footer/Footer.js";
 import Table from "../Table/Table.js";
+import "./../Card/card.css";
 import "./home.css";
+import cities from "../../cities.json";
 import useToken from "../../controllers/Token/ValidateToken.js";
 import { useEffect, useState } from "react";
 

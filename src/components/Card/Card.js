@@ -62,7 +62,7 @@ export default function Card(props) {
     return (
       <>
         {
-          // if preview mode equals to Card
+          // if preview mode
           preview && (
             <div className="preview">
               <img

@@ -48,7 +48,7 @@ export default function Home() {
         </select>
       </div>
 
-      {/* checking view mode permission for the user */}
+      {/* rendering view mode based on assigned permission for the user */}
       {option === "Card" ? (
         <div className="card-container">
           {cities.map((item) => {

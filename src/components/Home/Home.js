@@ -52,7 +52,10 @@ export default function Home() {
       {option === "Card" ? (
         <div className="card-container">
           {cities.map((item) => {
-            return <Card key={item.CityCode} id={item.CityCode} />;
+            return <Card 
+            key={item.CityCode} 
+            id={item.CityCode} 
+            />;
           })}
         </div>
       ) : (
